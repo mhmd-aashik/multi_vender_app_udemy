@@ -1,9 +1,11 @@
 import ThemeToggle from "@/components/shared/ThemeToggle";
+import { UserButton } from "@clerk/nextjs";
 
 const HomePage = () => {
   return (
     <div className="p-5">
       <div className="w-100 flex gap-x-5 justify-end">
+        <UserButton />
         <ThemeToggle />
       </div>
       <h1 className=" text-blue-500 font-barlow">Welcome to the HomePage</h1>
