@@ -52,7 +52,7 @@ export async function POST(req: Request) {
   // const { id } = evt.data;
   // const eventType = evt.type;
 
-  if (evt.type === "user.created") {
+  if (evt.type === "user.created" || evt.type === "user.updated") {
     console.log("userId:", evt.data.id);
     const data = JSON.parse(body).data;
     console.log("User created:", data);
