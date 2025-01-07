@@ -4,6 +4,7 @@ import { Inter, Barlow } from "next/font/google";
 
 // Styles
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,7 +31,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} ${barlow.variable} antialiased`}>
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem={true}
+          disableTransitionOnChange={true}
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
